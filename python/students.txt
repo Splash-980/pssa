@@ -1,0 +1,4 @@
+Latif,55.0
+BABA,77.0
+AMA,44.0
+AFIA,79.0

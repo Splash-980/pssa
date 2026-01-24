@@ -1,0 +1,64 @@
+/* Minimal responsive stylesheet for the Faculty site */
+:root{
+  /* Global color system */
+  --bg: #f4f7f6; /* page background: soft off-white */
+  --text: #072028; /* primary text: deep charcoal-teal for good contrast */
+  --muted:#556066; /* subdued text */
+  --accent:#0b6e4f; /* deep green */
+  --accent-2:#0b5a78; /* complementary blue */
+  --link: #0b5a78; /* link color (complementary blue) */
+  --btn-text: #ffffff;
+  --footer-bg: #e9f5f2; /* subtle footer background */
+  --max-width:1100px;
+  --radius:8px;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;color:var(--text);background:var(--bg);line-height:1.5}
+.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;color:var(--accent);text-decoration:none}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.main-nav a{color:var(--text);text-decoration:none;padding:.25rem}
+.main-nav a:hover,.main-nav a:focus{color:var(--link);outline:none}
+.main-nav a:focus-visible{outline:3px solid color-mix(in srgb, var(--link) 20%, white);outline-offset:3px}
+.menu-toggle{display:none}
+.hero{background:linear-gradient(90deg, rgba(11,110,79,0.04), rgba(11,90,120,0.02));padding:3.5rem 0;text-align:center}
+.hero h1{font-size:2rem;margin:.25rem 0;color:var(--text)}
+.lead{color:var(--muted);max-width:720px;margin:0.5rem auto}
+.btn{display:inline-block;background:var(--accent);color:var(--btn-text);padding:.6rem 1rem;border-radius:6px;text-decoration:none;border:none;box-shadow:0 6px 12px rgba(11,110,79,0.12);transition:transform .12s ease,box-shadow .12s ease}
+.btn:hover,.btn:focus{transform:translateY(-2px);box-shadow:0 10px 20px rgba(11,110,79,0.14)}
+.btn:focus-visible{outline:3px solid color-mix(in srgb, var(--accent) 20%, white);outline-offset:3px}
+.btn.ghost{background:transparent;color:var(--accent);border:2px solid var(--accent);margin-left:.5rem}
+.btn.ghost:hover,.btn.ghost:focus{background:rgba(11,110,79,0.04)}
+.quick-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:2rem 0}
+.highlight h2{margin-top:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem}
+.card{background:#fff;border-radius:var(--radius);padding:.75rem;box-shadow:0 6px 18px rgba(15,23,42,0.06);text-align:left}
+.card img{width:100%;height:140px;object-fit:cover;border-radius:6px}
+.news-list{padding-left:0;list-style:none}
+.news-list li{padding:.5rem 0;border-bottom:1px solid #e6edf3}
+.site-footer{border-top:1px solid #e6edf3;padding:1rem 0;margin-top:2rem;background:var(--footer-bg)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.site-note{font-size:.9rem;color:var(--muted);padding:.5rem 0}
+
+/* Links */
+a{color:var(--link)}
+a:focus-visible{outline:3px solid color-mix(in srgb, var(--link) 20%, white);outline-offset:3px}
+
+/* Accessibility: visible focus */
+*:focus{outline:none}
+
+.staff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.staff-card{background:#fff;padding:.75rem;border-radius:8px;text-align:center}
+.staff-card img{width:100%;height:180px;object-fit:cover;border-radius:6px}
+
+@media (max-width:800px){
+  .main-nav{display:none}
+  .menu-toggle{display:inline-block;background:transparent;border:1px solid #ddd;padding:.4rem .6rem;border-radius:6px}
+  .header-inner{gap:1rem}
+}
+
+/* Utility */
+.container h1{margin:1rem 0}
